@@ -1,1 +1,17 @@
 1.2  (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7)))
+
+1.3 
+(defun square (a) (* a a))
+
+(defun sum-of-squre-of-two-larger-numbers (a b c) (
+cond ((and (< a b) (< a c)) (+ b c))
+((and (< b c) (< b a)) (+ a c))
+((and (< c b) (< c a)) (+ b a))
+(else (+ a b))))
+
+(defun sum-of-squares-of-two-larger-numbers-of-three-numbers (a b c) (sum-of-squre-of-two-larger-numbers (square a) (square b) (square c)))
+
+sample usage:
+
+(sum-of-squares-of-two-larger-numbers-of-three-numbers 2 4 5) = 41
+
