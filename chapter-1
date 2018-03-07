@@ -1,6 +1,6 @@
-1.2  (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7)))
+[1.2]  (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5))))) (* 3 (- 6 2) (- 2 7)))
 
-1.3 
+[1.3] 
 (defun square (a) (* a a))
 
 (defun sum-of-squre-of-two-larger-numbers (a b c) (
@@ -15,7 +15,7 @@ sample usage:
 
 (sum-of-squares-of-two-larger-numbers-of-three-numbers 2 4 5) = 41
 
-1.4 
+[1.4] 
 1st case:
 if b > 0, operator = + 
 else operator = - (2 possible cases: b <= 0)
@@ -32,7 +32,7 @@ ans = 2 - 0 = 2
 
 Hence, we can agree that the procedure sums of the value a with the absolute value of b. 
 
-1.5
+[1.5]
 (define (p) (p))
 (define (test x y)
 (if (= x 0) 0
@@ -42,13 +42,14 @@ y))
 
 applicative-order-execution: 
 
-applicative order execution only evaluates a procedure when there are no more operators to operate on the operands.
+applicative order execution only evaluates a procedure when it is the first in the execution bracket.
 
 - (test 0 (p))
-- (test 0 NIL)
 - (if (= 0 0)
 0
-NIL)) = 0
+(p))) = 0
+
+NOTE: No need to execute p procedure
 
 normal-order-execution:
 
@@ -63,12 +64,7 @@ normal order execution evaluates all procedures in a procedure until you are lef
 - (if (= 0 0)
 0
 NIL)
-)
-
-- (if (= 0 0)
-0
-NIL)
 ) = 0
 
-Observation: The applicative order used 3 steps in executing the procedure while the normal order used 4 steps in executing the same procedure. 
+Observation: The applicative order used 2 steps in executing the procedure while the normal order used 3 steps in executing the same procedure. 
 
