@@ -15,3 +15,60 @@ sample usage:
 
 (sum-of-squares-of-two-larger-numbers-of-three-numbers 2 4 5) = 41
 
+1.4 
+1st case:
+if b > 0, operator = + 
+else operator = - (2 possible cases: b <= 0)
+
+sample case:
+i.  a = 2, b = -2
+ans = 2 - (-2) = 4
+
+ii. a = 2, b = 2
+ans = 2 + 2 = 4
+
+iii. a = 2, b = 0
+ans = 2 - 0 = 2
+
+Hence, we can agree that the procedure sums of the value a with the absolute value of b. 
+
+1.5
+(define (p) (p))
+(define (test x y)
+(if (= x 0) 0
+y))
+
+(test 0 (p))
+
+applicative-order-execution: 
+
+applicative order execution only evaluates a procedure when there are no more operators to operate on the operands.
+
+- (test 0 (p))
+- (test 0 NIL)
+- (if (= 0 0)
+0
+NIL)) = 0
+
+normal-order-execution:
+
+normal order execution evaluates all procedures in a procedure until you are left with primitive operands and operators. 
+
+- (test 0 (p))
+- (if (= 0 0)
+0
+(p))
+)
+
+- (if (= 0 0)
+0
+NIL)
+)
+
+- (if (= 0 0)
+0
+NIL)
+) = 0
+
+Observation: The applicative order used 3 steps in executing the procedure while the normal order used 4 steps in executing the same procedure. 
+
