@@ -68,3 +68,6 @@ NIL)
 
 Observation: The applicative order used 2 steps in executing the procedure while the normal order used 3 steps in executing the same procedure. 
 
+[1.6]
+It increases the number of operations for the overall procedure since the new-ifprocedure has to be decomposed to primitive operands and operators.
+
