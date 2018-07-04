@@ -6,6 +6,5 @@ Define a better version of make-rat that handles both positive and negative argu
 Answer:
 
 (define (make-rat n d)
-  (cond ((and (< n 0) (< d 0)) (cons (* -1 n) (* -1 d)))
-        ((and (> n 0) (< d 0)) (cons (* -1 n) (* -1 d)))
-        (else (cons n d))))
+  (if (< d 0) (cons (* -1 n) (* -1 d))
+  (cons n d)))
