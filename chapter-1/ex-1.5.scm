@@ -5,4 +5,4 @@
 
 ;NORMAL-ORDER EVALUATION
 ;execution steps:
-; - execute procedure (p) -> runs infinitely
+; - execute procedure (p) -> runs indefinitely
