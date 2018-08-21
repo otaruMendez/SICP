@@ -1,6 +1,7 @@
 ;QUESTION:
 ;Modify the make-account procedure of exercise 3.3 by adding another local state variable so that,
-;if an account is accessed more than seven consecutive times with an incorrect password, it invokes the procedure call-the-cops.
+;if an account is accessed more than seven consecutive times with an incorrect password,
+;it invokes the procedure call-the-cops.
 
 
 ;ANSWER
@@ -14,7 +15,8 @@
   (define (deposit amount)
     (set! balance (+ balance amount))
     balance)
-  (define (get-password-incorrect-message amount) (set! password-incorrect-counter (+ password-incorrect-counter 1)) "Incorrect Password")
+  (define (get-password-incorrect-message amount)
+    (set! password-incorrect-counter (+ password-incorrect-counter 1)) "Incorrect Password")
   (define (call-the-cops amount) "Call the cops now")
   (define (dispatch password m)
     (if (eq? account-password password)
@@ -51,4 +53,3 @@ dispatch))
 ((acc "tune" `withdraw) 20)
 ((acc "tunde" `withdraw) 20)
 ((acc "tune" `withdraw) 20)
-)
